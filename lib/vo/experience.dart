@@ -1,9 +1,9 @@
-class Work {
+class Experience {
   String id;
   String title;
   String desc;
   String photo;
-  Work(
+  Experience(
       {required this.id,
       required this.title,
       required this.desc,

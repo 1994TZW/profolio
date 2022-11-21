@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:profolio/theme.dart';
 import 'package:provider/provider.dart';
 
-import 'model/work_model.dart';
+import 'model/experience_model.dart';
 import 'pages/home_page.dart';
 
 
@@ -16,7 +14,7 @@ class MyApp extends StatelessWidget {
 
   Map<String, WidgetBuilder> route(BuildContext context) {
     final routes = <String, WidgetBuilder>{
-      '/': (_) => HomePage(),
+      '/': (_) => const HomePage(),
     };
     return routes;
   }
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider.value(value: WorkModel()),
+        ChangeNotifierProvider.value(value: ExperienceModel()),
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,

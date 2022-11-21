@@ -10,9 +10,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
+        //for web view
         if (constraints.maxWidth >= 1000) {
           return const WebPage();
         } else {
+          // for mobile view
           return const Scaffold(
             backgroundColor: primaryColor,
             body: Center(

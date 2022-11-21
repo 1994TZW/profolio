@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:profolio/theme.dart';
 
-class CustomText extends StatelessWidget {
+class LocalText extends StatelessWidget {
   final String text;
-  final double textsize;
-  final Color color;
+  final double? textsize;
+  final Color? color;
   final double? letterSpacing;
   final FontWeight? fontWeight;
-  const CustomText(
+  const LocalText(
       {super.key,
       required this.text,
-      required this.textsize,
-      required this.color,
+      this.textsize,
+      this.color,
       this.letterSpacing,
       this.fontWeight});
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      // textAlign: TextAlign.center,
       style: TextStyle(
-          color: color,
+          color: color??primaryColor,
           fontSize: textsize,
           letterSpacing: letterSpacing ?? 0.10,
           fontWeight: fontWeight ?? FontWeight.w400),

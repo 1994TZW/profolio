@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:profolio/model/work_model.dart';
 import 'package:profolio/theme.dart';
-import 'package:provider/provider.dart';
-
-import '../widget/custom_text.dart';
+import '../widget/local_text.dart';
+import 'about.dart';
+import 'experience_page.dart';
 
 class WebPage extends StatelessWidget {
   const WebPage({super.key});
@@ -17,45 +16,54 @@ class WebPage extends StatelessWidget {
         backgroundColor: primaryColor,
         body: Row(
           children: [
-            Container(
+            SizedBox(
               width: size.width * 0.09,
               height: size.height - 82,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   IconButton(
-                      icon: Icon(FontAwesome.github),
-                      color: Color(0xffffA8B2D1),
+                      splashRadius: 25,
+                      icon: const Icon(FontAwesome.github),
+                      color: iconColor,
                       iconSize: 16.0,
                       onPressed: () {
                         // method.launchURL("https://github.com/champ96k");
                       }),
+                  const SizedBox(height: 10),
                   IconButton(
-                    icon: Icon(Entypo.linkedin),
-                    color: Color(0xffffA8B2D1),
+                    splashRadius: 25,
+                    icon: const Icon(Entypo.linkedin),
+                    color: iconColor,
                     onPressed: () {
                       // method.launchURL(
                       //     "https://www.linkedin.com/in/tushar-nikam-a29a97131/");
                     },
                     iconSize: 16.0,
                   ),
+                  const SizedBox(height: 10),
                   IconButton(
-                      icon: Icon(FontAwesome.facebook_square),
-                      color: Color(0xffffA8B2D1),
+                      splashRadius: 25,
+                      icon: const Icon(FontAwesome.facebook_square),
+                      color: iconColor,
                       iconSize: 16.0,
                       onPressed: () {
                         // method.launchURL("https://twitter.com/champ_96k");
                       }),
+                  const SizedBox(height: 10),
                   IconButton(
-                      icon: Icon(Icons.call),
-                      color: Color(0xffffA8B2D1),
+                      splashRadius: 25,
+                      icon: const Icon(Icons.call),
+                      color: iconColor,
                       iconSize: 16.0,
                       onPressed: () {
                         // method.launchCaller();
                       }),
+                  const SizedBox(height: 10),
                   IconButton(
-                      icon: Icon(Icons.mail),
-                      color: Color(0xffffA8B2D1),
+                      splashRadius: 25,
+                      icon: const Icon(Icons.mail),
+                      color: iconColor,
                       iconSize: 16.0,
                       onPressed: () {
                         // method.launchEmail();
@@ -65,7 +73,7 @@ class WebPage extends StatelessWidget {
                     child: Container(
                       height: size.height * 0.20,
                       width: 2,
-                      color: Colors.grey.withOpacity(0.4),
+                      color: lineColor,
                     ),
                   ),
                 ],
@@ -77,35 +85,35 @@ class WebPage extends StatelessWidget {
                   SizedBox(
                     height: size.height * .06,
                   ),
-                  const CustomText(
+                  const LocalText(
                     text: "Hi, my name is",
                     textsize: 16.0,
-                    color: Color(0xff41FBDA),
+                    color: secondaryColor,
                     letterSpacing: 3.0,
                   ),
                   const SizedBox(
                     height: 6.0,
                   ),
-                  const CustomText(
+                  const LocalText(
                     text: "Thinzar Win.",
                     textsize: 68.0,
-                    color: Color(0xffCCD6F6),
+                    color: titleColor,
                     fontWeight: FontWeight.w900,
                   ),
                   const SizedBox(
                     height: 4.0,
                   ),
-                  CustomText(
+                  LocalText(
                     text: "I build things for the Android, IOS and web.",
                     textsize: 56.0,
-                    color: const Color(0xffCCD6F6).withOpacity(0.6),
+                    color: titleColor.withOpacity(0.6),
                     fontWeight: FontWeight.w700,
                   ),
                   SizedBox(
                     height: size.height * .04,
                   ),
                   Wrap(
-                    children:  [
+                    children: [
                       Text(
                         "I'm a software engineer specializing in \nbuilding (and occasionally designing) exceptional applications, \nwebsites, and everything in between.",
                         style: TextStyle(
@@ -117,9 +125,9 @@ class WebPage extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(
-                    height: size.height * .12,
-                  ),
+                  SizedBox(height: size.height * .12),
+                  const About(),
+                  const ExperiencePage()
                 ],
               ),
             ),
@@ -145,7 +153,7 @@ class WebPage extends StatelessWidget {
                     child: Container(
                       height: 100,
                       width: 2,
-                      color: Colors.grey.withOpacity(0.4),
+                      color: lineColor,
                     ),
                   ),
                 ],
