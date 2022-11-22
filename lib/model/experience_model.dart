@@ -33,6 +33,12 @@ class ExperienceModel extends ChangeNotifier {
         title: "OK Energy",
         desc:
             "TTT is a music App.Google Translate is a multilingual neural machine translation service developed by Google to translate text, documents and websites from one language into another.",
-        photo: "assets/ok_energy.jpg")
+        photo: "assets/ok_energy.jpg"),
+    Experience(
+        id: "6",
+        title: "RF Rating",
+        desc:
+            "TTT is a music App.Google Translate is a multilingual neural machine translation service developed by Google to translate text, documents and websites from one language into another.",
+        photo: "assets/car_service.jpg")
   ];
 }

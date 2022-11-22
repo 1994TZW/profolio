@@ -14,7 +14,7 @@ class About extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-            height: size.height * 0.6,
+            // height: size.height * 0.6,
             width: size.width / 2 - 100,
             child: Column(
               children: [
@@ -72,22 +72,24 @@ class About extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: size.width * 0.20,
-                        height: size.height * 0.15,
                         child: Column(
                           children: [
                             _itemRow(context, "Dart"),
+                            const SizedBox(height: 3),
                             _itemRow(context, "Flutter"),
+                            const SizedBox(height: 3),
                             _itemRow(context, "Firebase"),
                           ],
                         ),
                       ),
                       SizedBox(
                         width: size.width * 0.15,
-                        height: size.height * 0.15,
                         child: Column(
                           children: [
                             _itemRow(context, "UI/UX (Figma)"),
+                            const SizedBox(height: 3),
                             _itemRow(context, "MYSQL"),
+                            const SizedBox(height: 3),
                             _itemRow(context, "Git - Github"),
                           ],
                         ),
@@ -149,10 +151,7 @@ class About extends StatelessWidget {
         ),
         Text(
           text,
-          style: TextStyle(
-            color: Color(0xff717C99),
-            letterSpacing: 1.75,
-          ),
+          style: TextStyle(color: textColor, letterSpacing: 1.75),
         )
       ],
     );
