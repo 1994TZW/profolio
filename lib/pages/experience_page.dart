@@ -33,7 +33,6 @@ class ExperiencePage extends StatelessWidget {
           ),
         ],
       ),
-      // SizedBox(height: size.height * .15),
       Column(
           children:
               model.erperiences.map((e) => experienceRow(context, e)).toList())

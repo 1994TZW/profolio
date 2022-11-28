@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:profolio/theme.dart';
 
+import 'mobile_page.dart';
 import 'web_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,12 +16,7 @@ class HomePage extends StatelessWidget {
           return const WebPage();
         } else {
           // for mobile view
-          return const Scaffold(
-            backgroundColor: primaryColor,
-            body: Center(
-              child: Text("this is mobile"),
-            ),
-          );
+          return const MobilePage();
         }
       },
     );

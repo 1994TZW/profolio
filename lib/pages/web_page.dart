@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:profolio/theme.dart';
 import '../widget/local_text.dart';
-import 'about.dart';
+import '../widget/method.dart';
+import 'about_page.dart';
 import 'experience_page.dart';
+import '../widget/method.dart' as method;
 
 class WebPage extends StatelessWidget {
   const WebPage({super.key});
@@ -28,7 +30,8 @@ class WebPage extends StatelessWidget {
                       color: iconColor,
                       iconSize: 16.0,
                       onPressed: () {
-                        // method.launchURL("https://github.com/champ96k");
+                        method.launchURL(
+                            ContactType.github, "https://github.com/1994TZW");
                       }),
                   const SizedBox(height: 10),
                   IconButton(
@@ -36,8 +39,8 @@ class WebPage extends StatelessWidget {
                     icon: const Icon(Entypo.linkedin),
                     color: iconColor,
                     onPressed: () {
-                      // method.launchURL(
-                      //     "https://www.linkedin.com/in/tushar-nikam-a29a97131/");
+                       method.launchURL(
+                            ContactType.linkedin, "https://www.linkedin.com/in/thin-zar-win-5859b6247/");
                     },
                     iconSize: 16.0,
                   ),
@@ -48,7 +51,8 @@ class WebPage extends StatelessWidget {
                       color: iconColor,
                       iconSize: 16.0,
                       onPressed: () {
-                        // method.launchURL("https://twitter.com/champ_96k");
+                         method.launchURL(
+                            ContactType.facebook, "https://www.facebook.com/thinzar.win.3990?mibextid=ZbWKwL");
                       }),
                   const SizedBox(height: 10),
                   IconButton(
@@ -57,7 +61,8 @@ class WebPage extends StatelessWidget {
                       color: iconColor,
                       iconSize: 16.0,
                       onPressed: () {
-                        // method.launchCaller();
+                        method.launchURL(
+                            ContactType.phone, "+959254506208");
                       }),
                   const SizedBox(height: 10),
                   IconButton(
@@ -66,7 +71,8 @@ class WebPage extends StatelessWidget {
                       color: iconColor,
                       iconSize: 16.0,
                       onPressed: () {
-                        // method.launchEmail();
+                        method.launchURL(
+                            ContactType.email, "thinzarwin122@gmail.com");
                       }),
                   Padding(
                     padding: const EdgeInsets.only(top: 16.0),
@@ -80,55 +86,70 @@ class WebPage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: ListView(
-                children: [
-                  SizedBox(
-                    height: size.height * .06,
-                  ),
-                  const LocalText(
-                    text: "Hi, my name is",
-                    textsize: 16.0,
-                    color: secondaryColor,
-                    letterSpacing: 3.0,
-                  ),
-                  const SizedBox(
-                    height: 6.0,
-                  ),
-                  const LocalText(
-                    text: "Thinzar Win.",
-                    textsize: 68.0,
-                    color: titleColor,
-                    fontWeight: FontWeight.w900,
-                  ),
-                  const SizedBox(
-                    height: 4.0,
-                  ),
-                  LocalText(
-                    text: "I build things for the Android, IOS and web.",
-                    textsize: 56.0,
-                    color: titleColor.withOpacity(0.6),
-                    fontWeight: FontWeight.w700,
-                  ),
-                  SizedBox(
-                    height: size.height * .04,
-                  ),
-                  Wrap(
-                    children: [
-                      Text(
-                        "I'm a software engineer specializing in \nbuilding (and occasionally designing) exceptional applications, \nwebsites, and everything in between.",
-                        style: TextStyle(
-                          color: textColor,
-                          fontSize: 16.0,
-                          letterSpacing: 2.75,
-                          wordSpacing: 0.75,
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(height: size.height * .12),
-                  const About(),
-                  const ExperiencePage()
-                ],
+              child: ScrollConfiguration(
+                 behavior: const ScrollBehavior().copyWith(overscroll: false),
+                child: ListView(
+                  // controller: AdjustableScrollController(80),
+                  children: [
+                    SizedBox(
+                      height: size.height * .06,
+                    ),
+                    const LocalText(
+                      text: "Hi, my name is",
+                      textsize: 16.0,
+                      color: secondaryColor,
+                      letterSpacing: 3.0,
+                    ),
+                    const SizedBox(
+                      height: 6.0,
+                    ),
+                    const LocalText(
+                      text: "Thinzar Win.",
+                      textsize: 68.0,
+                      color: titleColor,
+                      fontWeight: FontWeight.w900,
+                    ),
+                    const SizedBox(
+                      height: 4.0,
+                    ),
+                    LocalText(
+                      text: "I build things for the Android, IOS and web.",
+                      textsize: 56.0,
+                      color: titleColor.withOpacity(0.6),
+                      fontWeight: FontWeight.w700,
+                    ),
+                    SizedBox(
+                      height: size.height * .04,
+                    ),
+                    Wrap(
+                      children: [
+                        Text(
+                          "I'm a software engineer specializing in \nbuilding (and occasionally designing) exceptional applications, \nwebsites, and everything in between.",
+                          style: TextStyle(
+                            color: textColor,
+                            fontSize: 16.0,
+                            letterSpacing: 2.75,
+                            wordSpacing: 0.75,
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(height: size.height * .12),
+                    const AboutPage(),
+                    const ExperiencePage(),
+                    Center(
+                        child:  Text(
+                      "©2022 Thinzar Win. All Rights Reserved.",
+                      style: TextStyle(
+                        color: textColor,
+                        fontSize: 16.0,
+                        letterSpacing: 2.75,
+                        wordSpacing: 0.75,
+                      ),
+                    )),
+                    const SizedBox(height: 50)
+                  ],
+                ),
               ),
             ),
             SizedBox(
