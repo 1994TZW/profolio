@@ -41,7 +41,7 @@ class _ExpandableTextState extends State<ExpandableText> {
                           child: const Text("See Less",
                               style: TextStyle(
                                 fontSize: 16.0,
-                                color: secondaryColor,
+                                color: iconColor,
                                 letterSpacing: 0.75,
                               ))),
                     )
@@ -72,7 +72,7 @@ class _ExpandableTextState extends State<ExpandableText> {
                       child: const Text("See More",
                           style: TextStyle(
                             fontSize: 16.0,
-                            color: secondaryColor,
+                            color: iconColor,
                             letterSpacing: 0.75,
                           ))),
                 )
