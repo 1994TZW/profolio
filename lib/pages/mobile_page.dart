@@ -119,9 +119,9 @@ class MobilePage extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children: [
                         ItemRow(text: "Dart"),
                         SizedBox(height: 3),
                         ItemRow(text: "Flutter"),
@@ -130,9 +130,9 @@ class MobilePage extends StatelessWidget {
                       ],
                     ),
                     SizedBox(width: size.height / 5),
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children: [
                         ItemRow(text: "UI/UX (Figma)"),
                         SizedBox(height: 3),
                         ItemRow(text: "MYSQL"),
@@ -301,6 +301,52 @@ class MobilePage extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           ExpandableText(text: e.desc, max: 0.4),
+          const SizedBox(height: 30),
+                Row(
+                  children: [
+                    Text(
+                      "Stack :",
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        color: secondaryColor.withOpacity(0.6),
+                        letterSpacing: 0.75,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Flexible(
+                      child: Row(children: e.stacks.asMap().entries.map((s) => Padding(
+                        padding: const EdgeInsets.only(left: 2,right: 2),
+                        child: Text("${s.value} ${(e.stacks.length-1)> s.key?',':''}",style: TextStyle(
+                          fontSize: 16.0,
+                          color: textColor,
+                          letterSpacing: 0.75,
+                        ),),
+                      )).toList())                    )
+                  ],
+                ),
+                const SizedBox(height: 5),
+                Row(
+                  children: [
+                    Text(
+                      "Tools :",
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        color: secondaryColor.withOpacity(0.6),
+                        letterSpacing: 0.75,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Flexible(
+                      child: Row(children: e.tools.asMap().entries.map((s) => Padding(
+                        padding: const EdgeInsets.only(left: 2,right: 2),
+                        child: Text("${s.value} ${(e.tools.length-1)> s.key?',':''}",style: TextStyle(
+                          fontSize: 16.0,
+                          color: textColor,
+                          letterSpacing: 0.75,
+                        ),),
+                      )).toList())                    )
+                  ],
+                )
         ],
       ),
     );

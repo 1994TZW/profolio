@@ -73,8 +73,8 @@ class AboutPage extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: size.width * 0.20,
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             ItemRow(text: "Dart"),
                             SizedBox(height: 3),
                             ItemRow(text: "Flutter"),
@@ -85,8 +85,8 @@ class AboutPage extends StatelessWidget {
                       ),
                       SizedBox(
                         width: size.width * 0.15,
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             ItemRow(text: "UI/UX (Figma)"),
                             SizedBox(height: 3),
                             ItemRow(text: "MYSQL"),
